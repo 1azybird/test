@@ -1,0 +1,117 @@
+##步行路线##
+/travelling/route/walking
+参数 String origin,String destination
+返回类型{"status":"0"失败
+				  "1"成功，
+		 "info":"具体描述"
+		 "data":{
+				"status":""，
+				"info":"",
+				"infocode":"",
+				"count":"",
+				"route":{......}详见高德地图API参数列表
+				}
+		}
+		
+##骑行路线##
+/travelling/route/bicycling
+参数 String origin,String destination
+返回类型{"status":"00"失败
+				  ""其他状态参考高德地图中的errcode，
+		 "info":"具体描述"
+		 "data":{
+				"errcode":""，
+				"errdetail":"",
+				"seemsg":"",
+				"ext":"",
+				"data":{......}详见高德地图API参数列表
+				}
+		}
+		
+##公交路线##
+/travelling/route/transit
+参数 String origin,String destination，String city，String cityd，String strategy 
+		cityd 跨城市时终点城市，同城与city相同  
+		strategy 规划策略
+		    0：最快捷模式
+            1：最经济模式
+            2：最少换乘模式
+            3：最少步行模式
+            5：不乘地铁模式
+返回类型{"status":"0"失败
+				  "1"成功，
+		 "info":"具体描述"
+		 "data":{
+				"status":""，
+				"info":"",
+				"infocode":"",
+				"count":"",
+				"route":{......}详见高德地图API参数列表
+				}
+		}
+		
+##驾车路线##
+/travelling/route/driving
+参数 String origin,String destination，String strategy 
+		strategy 规划策略
+		    0：最快捷模式
+            1：最经济模式
+            2：最少换乘模式
+            3：最少步行模式
+            5：不乘地铁模式
+返回类型{"status":"0"失败
+				  "1"成功，
+		 "info":"具体描述"
+		 "data":{
+				"status":""，
+				"info":"",
+				"infocode":"",
+				"count":"",
+				"route":{......}详见高德地图API参数列表
+				}
+		}	
+		
+##货车路线##
+/travelling/route/truck
+参数 String origin,String destination，String strategy，String province，String number，String size
+		province 汉字省份简称
+		number 车牌号码
+        size
+        1：微型车，2：轻型车（默认值），3：中型车，4：重型车
+		strategy
+        * 1：躲避拥堵
+        * 2：不走高速
+        * 3：避免收费
+        * 4：躲避拥堵&不走高速
+        * 5：避免收费&不走高速
+        * 6：躲避拥堵&避免收费
+        * 7：避免拥堵&避免收费&不走高速
+        * 8：高速优先
+        * 9：躲避拥堵&高速优先
+        * 10：不考虑路况，返回速度最优、耗时最短的路线。但是此路线不一定距离最短
+返回类型{"status":"0"失败
+				  "1"成功，
+		 "info":"具体描述"
+		 "data":{
+				"status":""，
+				"info":"",
+				"infocode":"",
+				"result":{......}详见高德地图API参数列表
+				}
+		}
+
+##天气查询##
+/travelling/weather/weatherInfo
+参数 String city
+返回类型{"status":"0"失败
+				  "1"成功，
+		 "info":"具体描述"
+		 "data":{
+				"status":""，
+				"info":"",
+				"infocode":"",
+				"count":""
+				"lives":{......}详见高德地图API参数列表
+				}
+		}	
+		
